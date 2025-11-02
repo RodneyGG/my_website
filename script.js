@@ -27,10 +27,12 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 function triggerScare() {
   video.style.display = 'block';
   video.muted = false;
-  video.play().then(() => {
-    video.requestFullscreen().catch(() => {});
-  }).catch(() => {
-    // If autoplay blocked, show a hint
-    alert("Tap the screen to start the video!");
+
+  // Play directly without fullscreen
+  video.play().catch(() => {
+    console.warn("Autoplay was blocked — user interaction required.");
   });
+
+  // Optional: hide button for clean effect
+  button.style.display = 'none';
 }
