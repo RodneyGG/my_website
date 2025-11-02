@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#scareBtn {
+  font-size: 3rem;
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 20px;
+  background: orange;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+#scareBtn:active {
+  transform: scale(0.9);
+}
+
+#scareVideo {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
